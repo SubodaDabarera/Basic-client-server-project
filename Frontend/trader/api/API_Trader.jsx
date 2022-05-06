@@ -11,6 +11,11 @@ export const addItems = async (data) => {
         .then((response) =>console.log(response))
 }
 
+export const editItems = async (data) => {
+    const sendData = await axios.put("http://localhost:3000/trader/editItem", data)
+        .then((response) =>console.log(response))
+}
+
 export const getInvItems = async (setItemList) => {
     const result = await axios.get("http://localhost:3000/trader/inventory")
         .then((response) => setItemList(response.data))

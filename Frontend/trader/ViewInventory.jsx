@@ -5,14 +5,6 @@ import EditItems from "./EditItems";
 import {useNavigate} from "react-router-dom";
 
 
-// const inventoryArray = [
-//     {id: 1, name: "product1", description: "desc1", price: 100, quantity: 12},
-//     {id:2, name: "product2", description: "desc2", price: 200, quantity: 22},
-//     {id:3, name: "product3", description: "desc3", price: 300, quantity: 5},
-//     {id:4, name: "product4", description: "desc4", price: 400, quantity: 8},
-//     {id:5, name: "product5", description: "desc5", price: 500, quantity: 17}
-// ]
-
 const ViewInventory = () => {
 
     const navigate = useNavigate();

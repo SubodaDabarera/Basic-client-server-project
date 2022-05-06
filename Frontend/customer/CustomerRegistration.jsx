@@ -25,19 +25,23 @@ const CustomerRegistration = () => {
     return(
         <div>
             <center>
-                <input placeholder="Input Name..."
+                <input type="text"
+                    placeholder="Input Name..."
                     onChange={(e) => setName(e.target.value)}
                     style={{margin:4}}
                        required
                 />
                 <br/>
-                <input placeholder="Input Email..."
+                <input type="email"
+                        placeholder="Input Email..."
                        onChange={(e) => setEmail(e.target.value)}
                        style={{margin:4}}
                        required
                 />
                 <br/>
-                <input placeholder="Input Password..."
+                <input
+                        type="password"
+                        placeholder="Input Password..."
                        onChange={(e) => setPassword(e.target.value)}
                        style={{margin:4}}
                 />

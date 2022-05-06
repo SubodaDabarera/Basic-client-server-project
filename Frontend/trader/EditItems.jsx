@@ -4,7 +4,7 @@ import {addItems} from "./api/API_Trader";
 const EditItems = (props) => {
 
     // const itemId = props.params;
-
+    const [id, setId] = useState(props.item.id);
     const [name, setName] = useState(props.item.name);
     const [price, setPrice] = useState(props.item.price);
     const [quantity, setQuantity] = useState(props.item.quantity);
@@ -13,11 +13,11 @@ const EditItems = (props) => {
    const handleSubmit = async () => {
 
        console.log(name, price, quantity, description);
-       const tempObj = {name, price, quantity, description};
+       const tempObj = {id,name, price, quantity, description};
 
-       // await addItems(tempObj)
-       //     .then(() => console.log("success"))
-       //     .catch(err => console.log(err))
+       await addItems(tempObj)
+           .then(() => console.log("success"))
+           .catch(err => console.log(err))
    }
 
 
