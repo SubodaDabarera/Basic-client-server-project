@@ -1,8 +1,6 @@
 import React, {useState} from "react";
-// import {createUser} from "./api/API_Customer";
+import {createUser} from "./api/API_Customer";
 import {useHistory, useNavigate} from "react-router-dom";
-
-
 
 const CustomerRegistration = () => {
 
@@ -16,14 +14,12 @@ const CustomerRegistration = () => {
     const handleSubmit = async() => {
       const tempObj = {name, email, password, dob}
 
-
-        // await createUser(tempObj)
-        //     .then(() => {
-        //         console.log("Success")
-        //         navigate("/customer/viewItems")
-        //     })
-        //     .catch(err => console.log(err))
-
+        await createUser(tempObj)
+            .then(() => {
+                console.log("Success")
+                navigate("/customer/viewItems")
+            })
+            .catch(err => console.log(err))
     }
 
     return(

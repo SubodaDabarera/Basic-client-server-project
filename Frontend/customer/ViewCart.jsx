@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-// import {getCartItems, getItems} from "./api/API_Customer";
+import {getCartItems} from "./api/API_Customer";
 
 
 const ViewCart = () => {
@@ -7,12 +7,12 @@ const ViewCart = () => {
     const [cartDetails, setCartDetails] = useState([]);
 
     useEffect(() => {
-        // async function fetchData() {
-        //     await getCartItems(setCartDetails);
-        // }
-        // fetchData().then(() => {
-        //     console.log(cartDetails)
-        // }).catch(err => console.log(err.message))
+        async function fetchData() {
+            await getCartItems(setCartDetails);
+        }
+        fetchData().then(() => {
+            console.log(cartDetails)
+        }).catch(err => console.log(err.message))
 
     },[])
 

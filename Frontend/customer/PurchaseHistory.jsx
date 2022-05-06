@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-// import {getPurchaseHistory} from "./api/API_Customer";
+import {getPurchaseHistory} from "./api/API_Customer";
 
 
 const PurchaseHistory = () => {
@@ -7,12 +7,12 @@ const PurchaseHistory = () => {
     const [purchaseDetails, setPurchaseDetails] = useState([]);
 
     useEffect(() => {
-        // async function fetchData() {
-        //     await getPurchaseHistory(setPurchaseDetails);
-        // }
-        // fetchData().then(() => {
-        //     console.log(purchaseDetails)
-        // }).catch(err => console.log(err.message))
+        async function fetchData() {
+            await getPurchaseHistory(setPurchaseDetails);
+        }
+        fetchData().then(() => {
+            console.log(purchaseDetails)
+        }).catch(err => console.log(err.message))
 
     },[])
 

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-// import {getWishListItems} from "./api/API_Customer";
+import {getWishListItems} from "./api/API_Customer";
 
 
 const ViewWishlist = () => {
@@ -7,12 +7,12 @@ const ViewWishlist = () => {
     const [wishListDetails, setWishListDetails] = useState([]);
 
     useEffect(() => {
-        // async function fetchData() {
-        //     await getWishListItems(setWishListDetails);
-        // }
-        // fetchData().then(() => {
-        //     console.log(wishListDetails)
-        // }).catch(err => console.log(err.message))
+        async function fetchData() {
+            await getWishListItems(setWishListDetails);
+        }
+        fetchData().then(() => {
+            console.log(wishListDetails)
+        }).catch(err => console.log(err.message))
 
     },[])
 
@@ -38,7 +38,6 @@ const ViewWishlist = () => {
                                 <td style={{padding:6}}>{item.price}</td>
                             </tr>
                         )
-
                     })
                 }
 
