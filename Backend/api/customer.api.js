@@ -1,9 +1,10 @@
 import {v4 as uuidv4} from "uuid";
+import {viewInventory} from './trader.api.js'
+
 
 const customers = new Map();
 const cart = new Map();
 const wishList = new Map();
-const items = new Map();
 const purchasedItem = new Map();
 const purchaseHistory = new Map();
 
@@ -17,7 +18,7 @@ export const createCustomerProfile = ({name, email, password, dob}) => {
 
 //view items
 export const ViewItems = () => {
-    return [...items.values()];
+    return viewInventory();
 }
 
 export const addToCart = ({id, name, price, description, quantity}) => {

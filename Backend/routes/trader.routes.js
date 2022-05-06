@@ -1,5 +1,13 @@
 import Router from "@koa/router";
-import {addItem, addPromotion, createTraderProfile, editItem, viewCustomer, viewInventory} from "../api/trader.api.js";
+import {
+    addItem,
+    addPromotion,
+    createTraderProfile,
+    editItem,
+    viewCustomer,
+    viewInventory,
+    viewPromotions
+} from "../api/trader.api.js";
 
 
 const traderRoutes = new Router({

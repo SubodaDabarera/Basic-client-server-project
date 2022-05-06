@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
 import {addItems} from "./api/API_Trader";
+import {useNavigate} from "react-router-dom";
 
 const AddItem = () => {
+
+    const navigate = useNavigate();
 
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
@@ -16,6 +19,7 @@ const AddItem = () => {
             .then(() => console.log("success"))
             .catch(err => console.log(err))
 
+        navigate("/trader/viewInventory")
     }
 
     return (
