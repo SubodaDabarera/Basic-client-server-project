@@ -32,8 +32,9 @@ const ViewInventory = () => {
     const onEditClicked = (item) => {
         // navigate(`/trader/addItems/${item.id}`)
 
-
     }
+
+    console.log(itemList)
 
     return (
         <div style={{margin:20, alignContent:"center"}}>
@@ -51,26 +52,30 @@ const ViewInventory = () => {
                 <tbody>
 
                 {
-                    itemList.map((item) => {
-                        return(
-                            <tr key={item.id}>
-                                <td style={{padding:6}}>{item.id}</td>
-                                <td style={{padding:6}}>{item.name}</td>
-                                <td style={{padding:6}}>{item.price}</td>
-                                <td style={{padding:6}}>{item.quantity}</td>
-                                <td style={{padding:6}}>
-                                    <button
-                                        onClick={() => setClickedItem(item)}
-                                    >
-                                        Edit
-                                    </button>
-                                </td>
+                    (itemList.length > 0) && (
+                    <>
+                        {
+                            itemList.map((item) => {
+                                return(
+                                    <tr key={item.id}>
+                                        <td style={{padding:6}}>{item.id}</td>
+                                        <td style={{padding:6}}>{item.name}</td>
+                                        <td style={{padding:6}}>{item.price}</td>
+                                        <td style={{padding:6}}>{item.quantity}</td>
+                                        <td style={{padding:6}}>
+                                            <button
+                                                onClick={() => setClickedItem(item)}
+                                            >
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                )
+                            })
+                        }
+                    </>
+                    )}
 
-                            </tr>
-                        )
-
-                    })
-                }
 
                 </tbody>
             </table>

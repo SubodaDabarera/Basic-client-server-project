@@ -16,6 +16,11 @@ export const createCustomerProfile = ({name, email, password, dob}) => {
     return customer;
 }
 
+//view customers
+export const viewCustomers = () => {
+    return [...customers.values()];
+}
+
 //view items
 export const ViewItems = () => {
     return viewInventory();
